@@ -1,0 +1,17 @@
+spring:
+  # MariaDB
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url:
+    username:
+    password:
+
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 1800
+      tracking-modes: cookie
+  error:
+    whitelabel:
+      enabled: false
