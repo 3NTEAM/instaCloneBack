@@ -5,6 +5,24 @@ spring:
     url:
     username:
     password:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/insta
+#    username: root
+#    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  security:
+    user:
+      password:
+        visible: true
 
 server:
   port: 8080
@@ -12,6 +30,14 @@ server:
     session:
       timeout: 1800
       tracking-modes: cookie
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
   error:
     whitelabel:
       enabled: false
+
+logging.level:
+  org.springframework.security: TRACE
