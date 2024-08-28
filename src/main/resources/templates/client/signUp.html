@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>insta | Sign Up</title>
+</head>
+<body>
+<div>
+    <div >
+
+        <form th:action="@{/signUp}" id="signUp-form" method="post">
+            <div class="mb-3">
+                <input name="name" type="text" class="form-control" id="inputUsername"
+                       placeholder="Username" required />
+            </div>
+            <div class="mb-3">
+                <input name="email" type="email" class="form-control" id="inputEmail"
+                       placeholder="Email" required/>
+            </div>
+            <div class="mb-3">
+                <input name="password" type="password" class="form-control" id="inputPassword"
+                       placeholder="Password" required/>
+            </div>
+            <div class="mb-3">
+                <label for="selectRoles">권한</label>
+                <select class="form-control" id="selectRoles" name="role">
+                    <option>ROLE_USER</option>
+                    <option>ROLE_MANAGER</option>
+                    <option>ROLE_ADMIN</option>
+                </select>
+            </div>
+            <div>
+                <div class="col-8">
+                    <div>
+                        <input type="checkbox" id="remember">
+                        <label for="remember">
+                            Remember Me
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="text-center mb-3">
+                    <p></p>
+                    <button type="submit"  onclick="onSignUpSubmit()">
+                        Sign Up
+                    </button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+
+
+        <script type="text/javascript">
+            const signUpForm = document.querySelector("#signUp-form");
+
+            function onSignUpSubmit() {
+                var data = {
+                    name: $('input#inputUsername').val(),
+                    email: $('input#inputEmail').val(),
+                    password: $('input#inputPassword').val(),
+                    role: $('select#selectRoles').val()
+                }
+                console.log(data)
+
+                $.ajax(
+                    {
+                        url: "/signUp",
+                        type: "POST",
+                        cache: false,
+                        data: JSON.stringify(data),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (result) {
+                            console.log("result", result)
+                            alert("success");
+                            location.href = "/";
+                        },
+                        error: function (result) {
+                            console.log("result", result)
+                            alert("error");
+                        }
+                    }
+                )
+            }
+
+            signUpForm.addEventListener("submit", onSignUpSubmit);
+        </script>
+    </div>
+</div></body>
