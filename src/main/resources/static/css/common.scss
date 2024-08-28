@@ -1,0 +1,50 @@
+//all
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-size:14px;
+    font-family:'Poppins', 'Noto Sans KR', AritaDotum, serif;
+    color:#000;
+}
+
+*, ul, li, ol{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+    color:#333;
+}
+
+img{
+    vertical-align:middle;
+}
+
+.clearFix::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.blind{
+    position:absolute;
+    top:-999999px;
+}
+
+address,i,em{
+    font-style:normal;
+}
+
+.sect-wrap{
+    max-width:935px;
+    width:100%;
+    margin:0 auto;
+}
+
+//변수 선언
+$threeN_color-g:#92a8d1;
+$threeN_color-y:#d58e8c;
