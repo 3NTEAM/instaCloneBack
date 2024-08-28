@@ -21,11 +21,11 @@
 #loginBox .login_wrap .inputBox .ipBox.input_tel {
   margin-bottom: 15px;
 }
-#loginBox .login_wrap .inputBox .ipBox form {
+#loginBox .login_wrap .inputBox .ipBox label {
   width: 100%;
   text-align: center;
 }
-#loginBox .login_wrap .inputBox .ipBox form input {
+#loginBox .login_wrap .inputBox .ipBox label input {
   border: 1px solid #bbb;
   background: #efefef;
   max-width: 425px;
