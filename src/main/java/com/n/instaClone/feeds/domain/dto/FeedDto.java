@@ -5,7 +5,7 @@ import lombok.Getter;
 
 
 @Getter
-public class MemberDto {
+public class FeedDto {
 
     private String name;
     private String password;
