@@ -24,7 +24,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/css/**", "/images/**", "/js/**", "/favicon.*", "/*/icon-*" ).permitAll() //TODO 정적자원(프론트 확인)
-                        .requestMatchers("/","/signUp","/user").permitAll()
+                        .requestMatchers("/signUp","/login").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(form -> form.loginPage("/login").permitAll());
 
