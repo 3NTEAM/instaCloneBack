@@ -1,73 +1,117 @@
 //loginBox
-#loginBox{
-    max-width:500px;
-    width:100%;
-    height:635px;
-    margin:50px auto 0;
+.instagram_bg{
+    background: radial-gradient(circle farthest-corner at 32% 106%,#ffe17d 0%,#ffcd69 10%,#fa9137 28%,#eb4141 42%,transparent 82%) , linear-gradient(135deg,#234bd7 12%,#c33cbe 58%);
+    height:100vh;
+    padding-top:50px;
 
-    border:1px solid #ccc;
-    text-align:center;
+    #loginBox{
+        max-width:500px;
+        width:100%;
+        height:600px;
+        margin:0 auto;
+        background:#fff;
+        -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.26);
+        -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.26);
+        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.26);
 
-    .login_wrap{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
+        border:1px solid #ccc;
+        text-align:center;
 
-        padding:100px 35px 85px;
+        .sect-wrap{
+            height:100%;
 
-        .inputBox{
-            max-width:425px;
-            width:100%;
-            margin:60px 0 35px;
+            .login_wrap{
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                justify-content:center;
+                height:100%;
 
-            .ipBox{
-                &.input_tel{
-                    margin-bottom:15px;
+                padding:0 35px;
+
+                .inputBox{
+                    max-width:425px;
+                    width:100%;
+                    margin:45px 0 35px;
+
+                    .ipBox{
+                        &.input_tel{
+                            margin-bottom:15px;
+                        }
+
+                        label{
+                            width:100%;
+                            text-align:center;
+
+                            input{
+                                border:1px solid #bbb;
+                                background:#efefef;
+                                max-width:425px;
+                                width:100%;
+                                height:50px;
+                                line-height:50px;
+                                font-size:16px;
+                                color:#666;
+                                padding-left:20px;
+                            }
+                        }                    
+                    }
                 }
 
-                label{
+                .loginBtn{
+                    max-width:425px;
                     width:100%;
-                    text-align:center;
+                    height:50px;
+                    line-height:50px;
+                    margin:0 auto;
+                    transition:all 0.3S ease;
 
-                    input{
-                        border:1px solid #bbb;
-                        background:#efefef;
-                        max-width:425px;
-                        width:100%;
-                        height:50px;
-                        line-height:50px;
-                        font-size:16px;
-                        color:#666;
-                        padding-left:20px;
+                    &.kakaoBox{
+                        background:#F9E000;
+
+                        a{
+                            color:#371A1A;
+                        }
                     }
-                }                    
-            }
-        }
 
-        .kakaoBox{
-            max-width:425px;
-            width:100%;
-            height:50px;
-            line-height:50px;
-            margin:0 auto;
-            background:#F9E000;
-            transition:all 0.3S ease;
+                    &.signUpBox{
+                        margin-top:10px;
+                        background:#5890FF;
 
-            &:hover{
-                border-radius:10px;
-            }
+                        a{
+                            color:#FFF;
+                        }
+                    }
 
-            p{
-                text-align:center;
+                    &:hover{
+                        border-radius:10px;
+                    }
 
-                a{
-                    display:block;
+                    p{
+                        text-align:center;
+
+                        a{
+                            display:block;
+                            width:100%;
+                            height:100%;
+                            font-size:16px;
+                            font-weight:700;
+                        }
+                    }
+                }
+
+                .team_logoBox{
+                    margin-top:30px;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
                     width:100%;
-                    height:100%;
-                    font-size:16px;
-                    font-weight:700;
-                    color:#371A1A;
+
+                    .line{
+                        width:160px;
+                        height:1px;
+                        background:#cfcfcf;
+                    }
                 }
             }
         }
