@@ -18,7 +18,7 @@ public class UserService {
                 memberDto.toEntity(
                 memberDto.getName(),
                 passwordEncoder.encode(memberDto.getPassword()),
-                memberDto.getEmail(),
+                memberDto.getPhone(),
                 memberDto.getRole()
         ));
     }

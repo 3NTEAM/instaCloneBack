@@ -14,21 +14,19 @@ public class Member {
     private Long id;
     private String name;
     private String password;
-    private String email;
+    private String phone;
     private String role;
     @CreationTimestamp
     private Timestamp createDate;
 
-
     @Builder
-    public Member(String _name, String _password, String _email, String _role) {
+    public Member(String _name, String _password, String _phone, String _role) {
         this.name = _name;
         this.password = _password;
-        this.email = _email;
+        this.phone = _phone;
         this.role = _role;
     }
 
     public Member() {
-
     }
 }

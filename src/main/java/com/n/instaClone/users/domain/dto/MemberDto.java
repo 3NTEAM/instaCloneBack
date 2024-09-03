@@ -9,15 +9,15 @@ public class MemberDto {
 
     private String name;
     private String password;
-    private String email;
+    private String phone;
     private String role;
 
     public Member toEntity(
             String name,
             String password,
-            String email,
+            String phone,
             String role
     ) {
-        return new Member(name, password, email, role);
+        return new Member(name, password, phone, role);
     }
 }
