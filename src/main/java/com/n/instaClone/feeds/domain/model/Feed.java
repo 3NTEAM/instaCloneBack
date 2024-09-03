@@ -1,12 +1,38 @@
 package com.n.instaClone.feeds.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "feed")
+@NoArgsConstructor
+@Getter
 public class Feed {
     @Id
-    Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long userId;
+    private MultipartFile feedImage;
+    private String imagePath;
+    private String feedText;
+    @CreationTimestamp
+    private Timestamp createDate;
+    @UpdateTimestamp
+    private  Timestamp updateDate;
+
+    @Builder
+    public Feed(Long _userId, MultipartFile _feedImage, String _imagePath, String _feedText){
+        this.userId = _userId;
+        this.feedImage = _feedImage;
+        this.imagePath = _imagePath;
+        this.feedText = _feedText;
+    }
+
 }
