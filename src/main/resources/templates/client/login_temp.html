@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>insta | Login</title>
+</head>
+<body>
+<div>
+    <div >
+
+        <form th:action="@{/login}" id=login-form method="post">
+            <div class="mb-3">
+                <input name="username" type="text" class="form-control" id="inputUsername"
+                       placeholder="Username"/>
+            </div>
+            <div class="mb-3">
+                <input name="password" type="password" class="form-control" id="inputPassword"
+                       placeholder="Password"/>
+            </div>
+            <div>
+                <div class="col-8">
+                    <div>
+                        <input type="checkbox" id="remember">
+                        <label for="remember">
+                            Remember Me
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="text-center mb-3">
+                    <p></p>
+                    <button onclick="onLoginSubmit()">
+                        Login
+                    </button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+
+
+        <script type="text/javascript">
+            const loginForm = document.querySelector("#login-form");
+
+            function onLoginSubmit() {
+                var data = {
+                    username: $('input#inputUsername').val(),
+                    password: $('input#inputPassword').val()
+                }
+                console.log(data)
+
+                $.ajax(
+                    {
+                        url: "/login",
+                        type: "POST",
+                        cache: false,
+                        data: JSON.stringify(data),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (result) {
+                            console.log("result", result)
+                            alert("success");
+                            location.href = "/user";
+                        },
+                        error: function (result) {
+                            console.log("result", result)
+                            alert("error");
+                        }
+                    }
+                )
+            }
+
+            loginForm.addEventListener("submit", onLoginSubmit);
+        </script>
+    </div>
+</div></body>

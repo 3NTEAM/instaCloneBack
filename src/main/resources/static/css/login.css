@@ -1,0 +1,97 @@
+.instagram_bg {
+  background: radial-gradient(circle farthest-corner at 32% 106%, #ffe17d 0%, #ffcd69 10%, #fa9137 28%, #eb4141 42%, transparent 82%), linear-gradient(135deg, #234bd7 12%, #c33cbe 58%);
+  height: 100vh;
+  padding-top: 50px;
+}
+.instagram_bg #loginBox {
+  max-width: 500px;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  background: #fff;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.26);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.26);
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.instagram_bg #loginBox .sect-wrap {
+  height: 100%;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 35px;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .inputBox {
+  max-width: 425px;
+  width: 100%;
+  margin: 45px 0 35px;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .inputBox .ipBox.input_tel {
+  margin-bottom: 15px;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .inputBox .ipBox label {
+  width: 100%;
+  text-align: center;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .inputBox .ipBox label input {
+  border: 1px solid #bbb;
+  background: #efefef;
+  max-width: 425px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  color: #666;
+  padding-left: 20px;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .loginBtn {
+  max-width: 425px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  transition: all 0.3S ease;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .loginBtn.kakaoBox {
+  background: #F9E000;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .loginBtn.kakaoBox a {
+  color: #371A1A;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .loginBtn.signUpBox {
+  margin-top: 10px;
+  background: #5890FF;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .loginBtn.signUpBox a {
+  color: #FFF;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .loginBtn:hover {
+  border-radius: 10px;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .loginBtn p {
+  text-align: center;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .loginBtn p a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 700;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .team_logoBox {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.instagram_bg #loginBox .sect-wrap .login_wrap .team_logoBox .line {
+  width: 160px;
+  height: 1px;
+  background: #cfcfcf;
+}
