@@ -3,29 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/common.css">
+
+    <script src="../../static/js/com.js"></script>
+    <title>Header</title>
 </head>
 <body>
     <header>
         <div class="head_logoBox">
-            <p class="3n_logo"><img src="../../static/img/3N_teamName.png" alt="3n 팀 로고"></p>
-            <h1 class="insta_logo"><img src="../../static/img/instagram_logo.png" alt="인스타그램 로고"></h1>
+            <p class="threeN_logo"><a href="https://github.com/3NTEAM" target="_blank"><img src="../../static/img/3N_teamName.png" alt="3n 팀 로고"></a></p>
+            <h1 class="insta_logo"><a href="index.html"><img src="../../static/img/instagram_logo.png" alt="인스타그램 로고"></a></h1>
         </div> <!-- head_logoBox -->
 
-        <div class="searchBox">
-            <p class="search_icon"><i class="fa-solid fa-magnifying-glass"></i></p>
+        <div class="head_searchBox">
+            <p class="search_icon"><img src="../../static/img/hd-i_search.png" alt="검색 아이콘"></p>
             <form action="method" name="search-input">
                 <h3 class="blind">search</h3>
 
                 <div class="hd_searchBar">
-                    <label for="" class="sound-only">
+                    <label for="hd_search">
                         <strong class="sound-only">필수</strong>
+                        <input type="text" name="hd_search" id="hd_search" class="hd_search" value required maxlength="30" placeholder="검색">
                     </label>
-                    <input type="text" name="hd_search" id="hd_search" class="hd_search" value required maxlength="30" placeholder="검색">
+
+                    <p class="delete_btn"><a href="#"><span></span></a></p>
                 </div>
             </form>
-        </div> <!-- searchBox -->
+        </div> <!-- head_searchBox -->
+
+        <div class="head_iconBox">
+            <p class="hd_icon icon1"><a href="#"><img src="../../static/img/hd-i_compass.png" alt="나침반 아이콘"></a></p>
+            <p class="hd_icon icon2"><a href="#"><img src="../../static/img/hd-i_heart.png" alt="좋아요 아이콘"></a></p>
+            <p class="hd_icon icon3"><a href="#"><img src="../../static/img/hd-i_person.png" alt="친구 아이콘"></a></p>
+        </div> <!-- head_iconBox -->
     </header>
 </body>
 </html>

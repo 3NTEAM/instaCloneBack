@@ -30,6 +30,7 @@ img{
     clear:both;
 }
 
+.sound-only,
 .blind{
     position:absolute;
     top:-999999px;
@@ -45,6 +46,160 @@ address,i,em{
     margin:0 auto;
 }
 
+
+
 //변수 선언
 $threeN_color-g:#92a8d1;
 $threeN_color-y:#d58e8c;
+$반응형1280:1280px;
+$반응형767:767px;
+$반응형500:500px;
+$반응형360:360px;
+
+//mixin
+@mixin flexLayout($justify:null, $gap:null, $align:null) {
+    display:flex;
+    justify-content:$justify;
+    gap:$gap;
+    align-items:$align;
+}
+@mixin pseudoEle(){
+    content:'';
+    display:block;
+}
+@mixin pos($p:absolute, $top:null, $bottom:null, $left:null, $right:null){
+    position:$p;
+    top:$top;
+    bottom:$bottom;
+    left:$left;
+    right:$right;
+}
+@mixin respond($size) {
+    @media screen and (max-width:$size) {
+        @content;
+    }
+}
+
+//header
+header{
+    height:100px;
+    width:100%;
+    @include flexLayout ($justify:space-between, $align:center);
+    padding:0 30px;
+    border-bottom:1px solid #cfcfcf;
+
+    .head_logoBox{
+        @include flexLayout ($justify:space-between, $align:center, $gap:30px);
+
+        .threeN_logo{
+            width:43px;
+            height:22px;
+            position:relative;
+
+            &::after{
+                @include pseudoEle();
+                width:1px;
+                height:32px;
+                background:#cfcfcf;
+                @include pos($top:-6px, $right:-15px);
+            }
+        }
+        
+        .insta_logo{
+            width:103px;
+            height:37px;
+
+            img{
+                width:100%;
+            }
+        }
+    }
+
+    .head_searchBox{
+        @include flexLayout($gap:10px, $align:center);
+
+        .search_icon{
+            width:30px;
+            height:30px;
+            
+            img{
+                width:100%;
+            }
+        }
+
+        form{
+            width:480px;
+            @include respond($반응형1280){
+                width:450px;
+            }
+            position:relative;
+
+            .hd_searchBar{
+                .hd_search{
+                    background:#efefef;
+                    border:none;
+                    width:100%;
+                    height:50px;
+                    padding:0 15px;
+
+                    input::placeholder{
+                        color:#000;
+                    }
+                }
+
+                .delete_btn{
+                    display:none;
+
+                    width:20px;
+                    height:20px;
+                    border-radius:50%;
+                    background:#c8c8c8;
+                    @include pos($top:50%, $right:14px);
+                    transform:translateY(-50%);
+
+                    a{
+                        display:block;
+                        width:100%;
+                        height:100%;
+
+                        span{
+                            @include flexLayout($align:center, $justify:center);
+                            position:relative;
+
+                            &::before,
+                            &::after{
+                                @include pseudoEle();
+                                width:1px;
+                                height:13px;
+                                background:#fff;
+                                transform-origin:50%;
+                                @include pos($top:3px);
+                            }
+
+                            &::before{
+                                transform:rotate(-45deg);
+                            }
+
+                            &::after{
+                                transform:rotate(45deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .head_iconBox{
+        @include flexLayout ($justify:space-between, $gap:25px);
+
+        p{
+            width:30px;
+            height:30px;
+
+            img{
+                width:100%;
+            }
+        }
+    }
+}

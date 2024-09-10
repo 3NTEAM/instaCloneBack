@@ -29,6 +29,7 @@ img {
   clear: both;
 }
 
+.sound-only,
 .blind {
   position: absolute;
   top: -999999px;
@@ -42,4 +43,123 @@ address, i, em {
   max-width: 935px;
   width: 100%;
   margin: 0 auto;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 1px solid #cfcfcf;
+}
+header .head_logoBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+}
+header .head_logoBox .threeN_logo {
+  width: 43px;
+  height: 22px;
+  position: relative;
+}
+header .head_logoBox .threeN_logo::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 32px;
+  background: #cfcfcf;
+  position: absolute;
+  top: -6px;
+  right: -15px;
+}
+header .head_logoBox .insta_logo {
+  width: 103px;
+  height: 37px;
+}
+header .head_logoBox .insta_logo img {
+  width: 100%;
+}
+header .head_searchBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+header .head_searchBox .search_icon {
+  width: 30px;
+  height: 30px;
+}
+header .head_searchBox .search_icon img {
+  width: 100%;
+}
+header .head_searchBox form {
+  width: 480px;
+  position: relative;
+}
+@media screen and (max-width: 1280px) {
+  header .head_searchBox form {
+    width: 450px;
+  }
+}
+header .head_searchBox form .hd_searchBar .hd_search {
+  background: #efefef;
+  border: none;
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+}
+header .head_searchBox form .hd_searchBar .hd_search input::placeholder {
+  color: #000;
+}
+header .head_searchBox form .hd_searchBar .delete_btn {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #c8c8c8;
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+}
+header .head_searchBox form .hd_searchBar .delete_btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+header .head_searchBox form .hd_searchBar .delete_btn a span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+header .head_searchBox form .hd_searchBar .delete_btn a span::before, header .head_searchBox form .hd_searchBar .delete_btn a span::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 13px;
+  background: #fff;
+  transform-origin: 50%;
+  position: absolute;
+  top: 3px;
+}
+header .head_searchBox form .hd_searchBar .delete_btn a span::before {
+  transform: rotate(-45deg);
+}
+header .head_searchBox form .hd_searchBar .delete_btn a span::after {
+  transform: rotate(45deg);
+}
+header .head_iconBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+header .head_iconBox p {
+  width: 30px;
+  height: 30px;
+}
+header .head_iconBox p img {
+  width: 100%;
 }
