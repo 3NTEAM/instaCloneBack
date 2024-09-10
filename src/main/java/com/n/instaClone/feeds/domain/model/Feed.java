@@ -19,7 +19,6 @@ public class Feed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long userId;
-    private MultipartFile feedImage;
     private String imagePath;
     private String feedText;
     @CreationTimestamp
@@ -28,9 +27,7 @@ public class Feed {
     private  Timestamp updateDate;
 
     @Builder
-    public Feed(Long _userId, MultipartFile _feedImage, String _imagePath, String _feedText){
-        this.userId = _userId;
-        this.feedImage = _feedImage;
+    public Feed(String _imagePath, String _feedText){
         this.imagePath = _imagePath;
         this.feedText = _feedText;
     }

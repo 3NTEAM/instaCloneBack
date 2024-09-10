@@ -1,14 +1,14 @@
 package com.n.instaClone.feeds.controller;
 
+import com.n.instaClone.feeds.domain.dto.FeedDto;
 import com.n.instaClone.feeds.domain.model.Feed;
 import com.n.instaClone.feeds.service.FeedService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -45,13 +45,27 @@ public class FeedController {
                              Model model){
         Optional<Feed> feed = feedService.findById(feedId);
         if(feed.isPresent()) model.addAttribute("feed", feed);
+        else model.addAttribute("feed", new Feed());
 
         return "feed/feedDetail";
+    }
+
+    /**
+     * 피드 저장하기
+     * @author hyunsu
+     * @param feed 피드 데이터
+     * @return 응답 상태
+     */
+    @PostMapping("/getFeedDetail")
+    public ResponseEntity<Feed> createFeed(@ModelAttribute(name = "feed") Feed feed){
+        Feed newFeed = feedService.createFeed(feed);
+        return ResponseEntity.status(HttpStatus.CREATED).body(newFeed);
     }
 
     @PostMapping("/createFeedLike")
     public void createFeedLike(@RequestParam Long feedId){
         //좋아요 추가
+
     }
 
     @PostMapping("/deleteFeedLike")

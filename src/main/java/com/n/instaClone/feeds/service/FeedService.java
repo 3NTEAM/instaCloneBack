@@ -1,8 +1,10 @@
 package com.n.instaClone.feeds.service;
 
+import com.n.instaClone.feeds.domain.dto.FeedDto;
 import com.n.instaClone.feeds.domain.model.Feed;
 import com.n.instaClone.feeds.domain.repository.FeedRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,4 +49,15 @@ public class FeedService {
         feeds.sort(Comparator.comparing(Feed::getCreateDate).reversed());
         return feeds;
     }
+
+    /**
+     * 피드 저장하기
+     * @author hyunsu
+     * @param feed feed 데이터
+     */
+    public Feed createFeed(Feed feed){
+        //Feed newFeed = feed.toEntity();
+        return feedRepository.save(feed);
+    }
+
 }
