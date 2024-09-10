@@ -57,7 +57,7 @@ public class FeedController {
      * @return 응답 상태
      */
     @PostMapping("/getFeedDetail")
-    public ResponseEntity<Feed> createFeed(@RequestBody FeedDto feed){
+    public ResponseEntity<Feed> createFeed(@ModelAttribute(name = "feed") Feed feed){
         Feed newFeed = feedService.createFeed(feed);
         return ResponseEntity.status(HttpStatus.CREATED).body(newFeed);
     }
@@ -65,6 +65,7 @@ public class FeedController {
     @PostMapping("/createFeedLike")
     public void createFeedLike(@RequestParam Long feedId){
         //좋아요 추가
+
     }
 
     @PostMapping("/deleteFeedLike")

@@ -55,9 +55,9 @@ public class FeedService {
      * @author hyunsu
      * @param feed feed 데이터
      */
-    public Feed createFeed(FeedDto feed){
-        Feed newFeed = feed.toEntity();
-        return feedRepository.save(newFeed);
+    public Feed createFeed(Feed feed){
+        //Feed newFeed = feed.toEntity();
+        return feedRepository.save(feed);
     }
 
 }

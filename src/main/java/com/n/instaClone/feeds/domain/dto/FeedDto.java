@@ -14,7 +14,6 @@ public class FeedDto {
 
     public Feed toEntity() {
         return Feed.builder()
-                ._feedImage(this.feedImage)
                 ._imagePath(this.imagePath)
                 ._feedText(this.feedText)
                 .build();
