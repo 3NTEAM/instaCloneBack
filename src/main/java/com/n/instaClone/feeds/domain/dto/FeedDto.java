@@ -1,23 +1,23 @@
 package com.n.instaClone.feeds.domain.dto;
 
-import com.n.instaClone.users.domain.model.Member;
+import com.n.instaClone.feeds.domain.model.Feed;
 import lombok.Getter;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @Getter
 public class FeedDto {
 
-    private String name;
-    private String password;
-    private String email;
-    private String role;
+    private MultipartFile feedImage;
+    private String imagePath;
+    private String feedText;
 
-    public Member toEntity(
-            String name,
-            String password,
-            String email,
-            String role
-    ) {
-        return new Member(name, password, email, role);
+    public Feed toEntity() {
+        return Feed.builder()
+                ._feedImage(this.feedImage)
+                ._imagePath(this.imagePath)
+                ._feedText(this.feedText)
+                .build();
     }
+
 }

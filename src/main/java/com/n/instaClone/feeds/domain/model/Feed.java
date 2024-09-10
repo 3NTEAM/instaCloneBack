@@ -28,8 +28,7 @@ public class Feed {
     private  Timestamp updateDate;
 
     @Builder
-    public Feed(Long _userId, MultipartFile _feedImage, String _imagePath, String _feedText){
-        this.userId = _userId;
+    public Feed(MultipartFile _feedImage, String _imagePath, String _feedText){
         this.feedImage = _feedImage;
         this.imagePath = _imagePath;
         this.feedText = _feedText;
