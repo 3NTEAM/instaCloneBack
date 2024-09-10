@@ -9,11 +9,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    private PasswordEncoder passwordEncoder;
-    private MemberRepository memberRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final MemberRepository memberRepository;
+
+    public UserService(PasswordEncoder passwordEncoder, MemberRepository memberRepository) {
+        this.passwordEncoder = passwordEncoder;
+        this.memberRepository = memberRepository;
+    }
 
 
     public Member createAccount(MemberDto memberDto){
+        System.out.println(memberDto.getName());
         return memberRepository.save(
                 memberDto.toEntity(
                 memberDto.getName(),

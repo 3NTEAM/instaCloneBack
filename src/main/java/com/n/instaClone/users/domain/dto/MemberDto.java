@@ -2,9 +2,11 @@ package com.n.instaClone.users.domain.dto;
 
 import com.n.instaClone.users.domain.model.Member;
 import lombok.Getter;
+import lombok.Setter;
 
 
 @Getter
+@Setter
 public class MemberDto {
 
     private String name;
