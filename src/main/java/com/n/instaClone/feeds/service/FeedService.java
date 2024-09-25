@@ -14,6 +14,7 @@ import java.util.Comparator;
 @Service
 @RequiredArgsConstructor
 public class FeedService {
+
     private final FeedRepository feedRepository;
 
     /**
